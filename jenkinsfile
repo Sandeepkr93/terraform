@@ -1,0 +1,11 @@
+node {   
+  stage('Git-Checkout') {
+   git 'https://github.com/amitvashisttech/mindtree-devops-30Jan2020.git'
+  }
+def project_terra="04-Terraform/03-Ansible-Deploy"
+dir(project_terra) {
+   stage('Prod Deployment on AWS'){
+   sh label: 'terraform', script: '/bin/terraform  init'
+   sh label: 'terraform', script: '/bin/terraform  apply -input=false -auto-approve'
+   }
+}
