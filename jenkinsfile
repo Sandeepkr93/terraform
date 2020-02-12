@@ -1,8 +1,8 @@
 node {   
   stage('Git-Checkout') {
-   git 'https://github.com/amitvashisttech/mindtree-devops-30Jan2020.git'
+   git 'https://github.com/Pranay-26/terraform.git'
   }
-def project_terra="04-Terraform/03-Ansible-Deploy"
+def project_terra="terraform-01/"
 dir(project_terra) {
    stage('Prod Deployment on AWS'){
    sh label: 'terraform', script: '/bin/terraform  init'
