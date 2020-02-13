@@ -7,8 +7,8 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  shared_credentials_file = "/var/lib/jenkins/users/.aws/cred"
-  profile                 = "customprofile"
+  access_key = "AKIA4QCSZ4BXELAUQ56Y"
+  secret_key = "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"
 }
 
 resource "aws_vpc" "my_network" {
