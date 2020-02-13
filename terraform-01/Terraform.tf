@@ -90,4 +90,15 @@ resource "aws_instance" "petclinic-web" {
     }
 
 }
+resource "null_resource" "ansible-main" {
+provisioner "local-exec" {
+  command = <<EOT
+        sleep 100;
+        > jenkins-ci.ini;
+        echo "[jenkins-ci]"| tee -a jenkins-ci.ini;
+        export ANSIBLE_HOST_KEY_CHECKING=False;
+        echo "${aws_instance.petclinic-web.public_ip}" | tee -a jenkins-ci.ini;
+    EOT
+}
+}
 
