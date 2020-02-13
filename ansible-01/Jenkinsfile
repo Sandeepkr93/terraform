@@ -6,7 +6,7 @@ node {
   def project_ansible="ansible-01/"
 dir(project_ansible) {
    stage('ansible-deploy') {
-   sh 'ansible-playbook  --key=/var/lib/jenkins/.ssh/aws.pem -i inventory web-playbook.yml -u ubuntu -vvv'
+   sh 'ansible-playbook  --key=/var/lib/jenkins/.ssh/aws.pem -i inventory web-playbook.yml -u ubuntu -v'
   }
   }
 }
