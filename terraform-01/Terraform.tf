@@ -8,6 +8,7 @@ terraform {
 provider "aws" {
   region = "us-east-1"
   shared_credentials_file = "/var/lib/jenkins/users/.aws/cred"
+  profile                 = "customprofile"
 }
 
 resource "aws_vpc" "my_network" {
