@@ -30,7 +30,7 @@
 
 
   - name: Copy Petclinic Project War Files
-    copy: src=/var/lib/jenkins/workspace/M1056412/04-Terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/petclinic.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+    copy: src=/var/lib/jenkins/artifacts/petclinic.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
 
   handlers:
   - name: Restart Tomcat
